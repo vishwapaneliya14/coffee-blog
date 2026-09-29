@@ -1,0 +1,27 @@
+const coffees=[
+{id:"espresso",name:"Espresso",country:"Italy",type:"hot",taste:"Strong & rich",img:"https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=900&q=80",desc:"A concentrated Italian coffee made by forcing hot water through finely ground coffee."},
+{id:"cappuccino",name:"Cappuccino",country:"Italy",type:"hot",taste:"Creamy & balanced",img:"https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=80",desc:"Espresso combined with steamed milk and a generous layer of milk foam."},
+{id:"latte",name:"Caffè Latte",country:"Italy",type:"hot",taste:"Smooth & milky",img:"https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=900&q=80",desc:"A smooth espresso drink with steamed milk and a light layer of foam."},
+{id:"mocha",name:"Mocha",country:"United States",type:"hot",taste:"Chocolatey & sweet",img:"https://images.unsplash.com/photo-1579888071069-c107a6f79d2c?auto=format&fit=crop&w=900&q=80",desc:"Coffee and chocolate meet steamed milk for a rich dessert-like drink."},
+{id:"turkish",name:"Turkish Coffee",country:"Türkiye",type:"hot",taste:"Intense & aromatic",img:"https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=900&q=80",desc:"Finely ground coffee simmered traditionally in a small pot called a cezve."},
+{id:"coldbrew",name:"Cold Brew",country:"Global",type:"cold",taste:"Smooth & mellow",img:"https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80",desc:"Coffee slowly steeped in cold water to create a smooth, refreshing drink."},
+{id:"affogato",name:"Affogato",country:"Italy",type:"cold",taste:"Bold & creamy",img:"https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=900&q=80",desc:"A scoop of gelato or ice cream topped with a shot of hot espresso."},
+{id:"flatwhite",name:"Flat White",country:"Australia / New Zealand",type:"hot",taste:"Velvety & strong",img:"https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80",desc:"Espresso with silky microfoam, giving a strong coffee flavour and smooth texture."},
+{id:"americano",name:"Americano",country:"United States",type:"hot",taste:"Clean & bold",img:"https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=900&q=80",desc:"Espresso diluted with hot water for a longer, lighter cup."}
+];
+const recipes=[
+{id:"r1",name:"Classic Cappuccino",time:"7 min",difficulty:"Easy",img:coffees[1].img,ingredients:["1 espresso shot","100 ml steamed milk","Milk foam"],steps:"Brew espresso. Steam milk until silky. Pour milk into espresso and finish with foam."},
+{id:"r2",name:"Iced Cold Brew",time:"5 min + steeping",difficulty:"Easy",img:coffees[5].img,ingredients:["Coffee grounds","Cold water","Ice","Milk (optional)"],steps:"Combine coffee and cold water. Steep in the refrigerator, strain, then serve over ice."},
+{id:"r3",name:"Chocolate Mocha",time:"10 min",difficulty:"Easy",img:coffees[3].img,ingredients:["1 espresso shot","1 tbsp cocoa","150 ml milk","Sugar to taste"],steps:"Mix cocoa with espresso. Add steamed milk and sweeten. Finish with a light foam layer."}
+];
+const destinations=[
+{name:"Rome, Italy",coffee:"Espresso",img:"https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=900&q=80",about:"Rome is deeply connected with Italian espresso culture, from quick counter-top coffees to historic cafés.",things:["Visit historic cafés","Explore the Colosseum","Try a traditional espresso at the bar","Walk through Trastevere"]},
+{name:"Istanbul, Türkiye",coffee:"Turkish Coffee",img:"https://images.unsplash.com/photo-1527838832700-5059252407fa?auto=format&fit=crop&w=900&q=80",about:"Istanbul blends centuries of history with a distinctive coffee tradition recognized for its preparation and social culture.",things:["Visit the Grand Bazaar","Explore historic coffeehouses","See Hagia Sophia","Try Turkish desserts"]},
+{name:"Melbourne, Australia",coffee:"Flat White",img:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",about:"Melbourne is known for a lively specialty-coffee scene and a café culture woven into everyday city life.",things:["Explore laneways","Visit specialty cafés","See Federation Square","Walk along the Yarra River"]},
+{name:"Seattle, USA",coffee:"Cold Brew & Latte",img:"https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80",about:"Seattle has a strong modern coffee culture and is an interesting stop for anyone curious about American café history.",things:["Explore local cafés","Visit Pike Place Market","Walk the waterfront","See the Space Needle"]}
+];
+const blogs=[
+{title:"How coffee became a global ritual",cat:"Coffee Culture",img:"https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80",text:"From traditional coffeehouses to modern specialty cafés, coffee has become part of daily life in many cultures."},
+{title:"5 easy ways to improve home coffee",cat:"Brewing Tips",img:"https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=80",text:"Small changes in grind, water, freshness and brewing technique can make a noticeable difference."},
+{title:"Coffee and travel: what to look for",cat:"Travel",img:"https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",text:"A local coffee shop can be a simple way to experience the character of a new city."}
+];
