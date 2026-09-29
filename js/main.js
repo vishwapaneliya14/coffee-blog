@@ -1,0 +1,17 @@
+function getWish(){return JSON.parse(localStorage.getItem("brewWishlist")||"[]")}
+function toggleWish(id){let w=getWish();w=w.includes(id)?w.filter(x=>x!==id):[...w,id];localStorage.setItem("brewWishlist",JSON.stringify(w));renderAll();toast(w.includes(id)?"Added to wishlist ❤️":"Removed from wishlist")}
+function coffeeCard(c){const saved=getWish().includes(c.id);return `<article class="card"><img src="${c.img}" alt="${c.name}"><div class="card-body"><button class="wish ${saved?"saved":""}" onclick="toggleWish('${c.id}')">${saved?"❤️":"♡"}</button><span class="tag">${c.country}</span><span class="tag">${c.type}</span><h3>${c.name}</h3><p class="muted">${c.desc}</p><b>${c.taste}</b></div></article>`}
+function recipeCard(r){return `<article class="card"><img src="${r.img}" alt="${r.name}"><div class="card-body"><span class="tag">${r.difficulty}</span><span class="tag">⏱ ${r.time}</span><h3>${r.name}</h3><p><b>Ingredients:</b> ${r.ingredients.join(", ")}</p><p class="muted">${r.steps}</p></div></article>`}
+function destinationCard(d){return `<article class="card"><img src="${d.img}" alt="${d.name}"><div class="card-body"><span class="tag">☕ ${d.coffee}</span><h3>${d.name}</h3><p class="muted">${d.about}</p><b>Things to do:</b><ul class="recipe-list">${d.things.map(x=>`<li>${x}</li>`).join("")}</ul></div></article>`}
+function blogCard(b){return `<article class="card"><img src="${b.img}" alt="${b.title}"><div class="card-body"><span class="tag">${b.cat}</span><h3>${b.title}</h3><p class="muted">${b.text}</p><a href="blog.html"><b>Read more →</b></a></div></article>`}
+function renderAll(){
+let f=document.getElementById("featured");if(f)f.innerHTML=coffees.slice(0,6).map(coffeeCard).join("");
+let cg=document.getElementById("coffeeGrid");if(cg){let q=(document.getElementById("coffeeSearch")?.value||"").toLowerCase(),type=document.getElementById("coffeeFilter")?.value||"all";cg.innerHTML=coffees.filter(c=>(type==="all"||c.type===type)&&(c.name+" "+c.country).toLowerCase().includes(q)).map(coffeeCard).join("")||"<p>No coffee found.</p>"}
+let rg=document.getElementById("recipeGrid");if(rg)rg.innerHTML=recipes.map(recipeCard).join("");
+let dg=document.getElementById("destinationGrid");if(dg)dg.innerHTML=destinations.map(destinationCard).join("");
+let bg=document.getElementById("blogGrid");if(bg)bg.innerHTML=blogs.map(blogCard).join("");
+let hb=document.getElementById("homeBlogs");if(hb)hb.innerHTML=blogs.map(blogCard).join("");
+let wg=document.getElementById("wishlistGrid");if(wg){let w=getWish();let list=coffees.filter(c=>w.includes(c.id));wg.innerHTML=list.length?list.map(coffeeCard).join(""):"<div class='card'><div class='card-body'><h3>Your wishlist is empty ☕</h3><p class='muted'>Browse Coffee Types and tap ♡ to save a coffee.</p><a class='btn' href='coffees.html'>Explore coffees</a></div></div>"}
+}
+function toast(msg){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";Object.assign(t.style,{position:"fixed",bottom:"25px",right:"25px",background:"#241812",color:"white",padding:"12px 18px",borderRadius:"999px",zIndex:99});document.body.appendChild(t)}t.textContent=msg;clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.remove(),1800)}
+document.addEventListener("DOMContentLoaded",()=>{renderAll();document.getElementById("coffeeSearch")?.addEventListener("input",renderAll);document.getElementById("coffeeFilter")?.addEventListener("change",renderAll)});
